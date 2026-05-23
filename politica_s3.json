@@ -1,12 +1,21 @@
 {
-    "Version": "2012-10-17",
-    "Statement": [
-        {
-            "Sid": "PublicReadGetObject",
-            "Effect": "Allow",
-            "Principal": "*",
-            "Action": "s3:GetObject",
-            "Resource": "arn:aws:s3:::TU_NOMBRE_DE_BUCKET/*"
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "PermitirSoloDesdeAmplify",
+      "Effect": "Allow",
+      "Principal": "*",
+      "Action": "s3:GetObject",
+      "Resource": "arn:aws:s3:::e-commerce-e2/*",
+      "Condition": {
+        "StringLike": {
+          "aws:Referer": [
+            "https://main.d24el0ibgkta2q.amplifyapp.com/*",
+            "http://localhost:3000/*",
+            "http://localhost:5173/*"
+          ]
         }
-    ]
+      }
+    }
+  ]
 }
