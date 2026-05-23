@@ -1,7 +1,3 @@
--- Crear la base de datos
-CREATE DATABASE IF NOT EXISTS e_commerce;
-USE e_commerce;
-
 -- Crear tabla de Usuarios
 CREATE TABLE Usuarios (
     id INT AUTO_INCREMENT PRIMARY KEY,
